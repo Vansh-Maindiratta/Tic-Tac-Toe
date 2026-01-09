@@ -1,0 +1,74 @@
+body{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    height: 400px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+.class{
+    height:133px;
+    width:133px;
+}
+.lucorner,.ucenter,.mmiddle,.lmiddle{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.rucorner,.rmiddle{
+    border-bottom: 2px solid black;
+}
+.lbcorner{
+    border-right: 2px solid black;
+}
+.bcenter{
+    border-right: 2px solid black;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;  
+    gap: 200px;
+}
+.moves{
+    width: 100px;
+    height:50px;
+}
+.O,.X{
+    position: absolute;
+    z-index: 1;
+    height: 125px;
+    width : 125px;
+    opacity: 0;
+}
+.nextTurn{
+    height: 40px;
+    width : 50px;
+}
+.hline img{
+    position: absolute;
+    width: 650px;
+    height: 90px;
+    opacity: 0;
+    
+}
+.vline img{
+    position: absolute;
+    height: 400px;
+    width: 100px;
+    opacity: 0;
+}
+
+.vline img:nth-child(1) {top:20.33%;right: 55%;}
+.vline img:nth-child(2) {top:20.33%;right: 46%;}
+.vline img:nth-child(3) {top:20.33%;right: 38%;}
+
+.hline img:nth-child(1) {top:23.33%;left:30%}
+.hline img:nth-child(2) {top:43.33%;left:30%}
+.hline img:nth-child(3) {top:61.33%;left:30%}
