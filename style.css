@@ -89,6 +89,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: 200px;
+    z-index: 10;
 }
 button:hover {
   box-shadow:
@@ -112,7 +113,7 @@ button:active {
 .ldiagonal{left: 46.5%; bottom: -27.5%;rotate: -39deg;}
 .rdiagonal{left: 47.9%; bottom: -25.5%; rotate: 39deg;}
 
-.Xwin,.Owin,.start,.players{
+.Xwin,.Owin,.start,.players,.Draw{
     position: absolute;
     width: 98%;
     height: 500px;
@@ -125,8 +126,9 @@ button:active {
     align-items: center;
     justify-content: center;
     box-shadow: 10px 10px 10px rgba(255,255,255,0.3),  10px -10px 10px rgba(102, 104, 142, 0.3);
+    z-index: 100000;
 }
- .Owin h1, .Xwin h1{
+ .Owin h1, .Xwin h1,.Draw h1{
     font-size: 100px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #929191;

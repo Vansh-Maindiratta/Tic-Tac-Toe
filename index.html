@@ -63,8 +63,8 @@
     </div>
 
     <!--Next Move and Reset button-->
-    <div class="buttons">
-        <button class = "moves"><img src = "#" alt = "move" class="nextTurn"></button>
+    <div class="buttons hidden">
+        <button class = "moves" onclick="alert('This item tells whose turn is it currently');"><img src = "#" alt = "move" class="nextTurn"></button>
         <button class = "moves" onclick="reset();">Reset</button>
     </div>
 
@@ -83,10 +83,16 @@
         <button class = "moves replay" onclick="reset();">Replay</button>
     </div>
 
+    <!--Draw-->
+    <div class="Draw hidden">
+        <h1> Draw </h1>
+        <button class = "moves replay" onclick="reset();">Replay</button>
+    </div>
+
 
     <!--1) Start Game-->
-    <div class="start">
-        <button  class = "init" onclick='document.querySelector(".start").style.opacity=0
+    <div class="start ">
+        <button  class = "init" onclick='document.querySelector(".start").classList.add("hidden");
             document.querySelector(".players").classList.remove("hidden")'>
             Start
         </button>
@@ -97,7 +103,9 @@
     <div class="players hidden">
         <h1 style="color: #929191;font-size: 50px;">Select number of players</h1>
         <div class="playerButtons">
-            <button class="playerSelect one"><img src="./BlackPerson2.svg" class="black"></button>
+            <button class="playerSelect one" onclick="alert('One player mode is currently out of service');"><img src="./BlackPerson2.svg" class="black"></button>
+            
+
             <button class="playerSelect two" onclick="document.querySelector('.players').classList.add('hidden');
             document.querySelector('.sprite').classList.remove('hidden')"><img src="./BlackPerson2.svg" class="black"><img src="./WhitePerson.svg" class="white"></button>
         </div>
@@ -107,9 +115,9 @@
     <div class="sprite hidden">
         <h1 style="color: #929191;font-size: 50px;">What would you like to play</h1>
         <div class="XorO">
-            <button onclick="document.querySelector('.sprite').classList.add('hidden'); turn=0;container.classList.remove('hidden');updateNextTurn();"><img src="./X_Mark.svg" class="XSprite ex"></button> 
+            <button onclick="document.querySelector('.sprite').classList.add('hidden'); turn=0;document.querySelector('.buttons').classList.remove('hidden');container.classList.remove('hidden');updateNextTurn();"><img src="./X_Mark.svg" class="XSprite ex"></button> 
 
-            <button onclick="document.querySelector('.sprite').classList.add('hidden'); turn=1;container.classList.remove('hidden');updateNextTurn();"><img src="./O_Mark.svg" class="OSprite ex"></button> 
+            <button onclick="document.querySelector('.sprite').classList.add('hidden'); turn=1;document.querySelector('.buttons').classList.remove('hidden');container.classList.remove('hidden');updateNextTurn();"><img src="./O_Mark.svg" class="OSprite ex"></button> 
         </div>
     </div>
 
