@@ -4,7 +4,10 @@ body{
     display: grid;
     justify-content: center;
     align-items: center;
+    background-color: #1e1e1e;
+    margin: 0px;
 }
+
 .board{
     display: grid;
     grid-template-rows: repeat(3,1fr);
@@ -13,6 +16,8 @@ body{
     width: 400px;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.489);
+    background: #fff;
 }
 .class{
     height:133px;
@@ -31,11 +36,6 @@ body{
 .bcenter{
     border-right: 2px solid black;
 }
-.buttons{
-    display: flex;
-    flex-direction: row;  
-    gap: 200px;
-}
 .moves{
     width: 100px;
     height:50px;
@@ -51,24 +51,173 @@ body{
     height: 40px;
     width : 50px;
 }
-.hline img{
+.hlinediv img{
     position: absolute;
-    width: 650px;
+    width: 750px;
     height: 90px;
     opacity: 0;
     
 }
-.vline img{
+.vlinediv img{ 
     position: absolute;
-    height: 400px;
+    height: 500px;
     width: 100px;
     opacity: 0;
 }
+.ldiagonal, .rdiagonal{
+    position: absolute;
+    height: 1000px;
+    width: 100px;
+    opacity: 0;
+}
+button {
+  background: #f5f5f5;
+  color: #111;
+  border: none;
+  
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 
-.vline img:nth-child(1) {top:20.33%;right: 55%;}
-.vline img:nth-child(2) {top:20.33%;right: 46%;}
-.vline img:nth-child(3) {top:20.33%;right: 38%;}
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.15),
+    0 6px 20px rgba(0,0,0,0.4);
+}
+.buttons{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+button:hover {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.3),
+    0 8px 28px rgba(0,0,0,0.6);
+}
 
-.hline img:nth-child(1) {top:23.33%;left:30%}
-.hline img:nth-child(2) {top:43.33%;left:30%}
-.hline img:nth-child(3) {top:61.33%;left:30%}
+button:active {
+  transform: scale(0.96);
+}
+
+
+.vlinediv img:nth-child(1) {top:20%;right: 55%;}
+.vlinediv img:nth-child(2) {top:20%;right: 46.5%;}
+.vlinediv img:nth-child(3) {top:20%;right: 38%;}
+
+.hlinediv img:nth-child(1) {top:30%;left:25.5%}
+.hlinediv img:nth-child(2) {top:49%;left:25.5%}
+.hlinediv img:nth-child(3) {top:68%;left:25.5%}
+
+.ldiagonal{left: 46.5%; bottom: -27.5%;rotate: -39deg;}
+.rdiagonal{left: 47.9%; bottom: -25.5%; rotate: 39deg;}
+
+.Xwin,.Owin,.start,.players{
+    position: absolute;
+    width: 98%;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 5px;
+    top: 25%;
+    left:1%;
+    background-color: #626161;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(255,255,255,0.3),  10px -10px 10px rgba(102, 104, 142, 0.3);
+}
+ .Owin h1, .Xwin h1{
+    font-size: 100px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #929191;
+    text-shadow: 5px 5px 10px #2b2a2a;
+ }
+
+ .init{
+    border: none;
+    width: 410px;
+    height: 400px;
+    font-size: 150px;
+    background-color: #626161;
+    box-shadow: none;
+    cursor: pointer;
+    z-index: 10;
+    color: #929191;
+ }
+
+ .hidden{
+    opacity: 0;
+    pointer-events: none;
+ }
+
+ .replay{
+    position: absolute;
+    border: none;
+    background-color: #626161;
+    border-radius: 20%;
+    width: 170px;
+    height: 80px;
+    top: 70%;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 1000;
+    color: #929191;
+ }
+
+ .black,.white{
+    width: 300px;
+    height: 300px;
+ }
+
+.players{
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    justify-content: flex-start; 
+    gap: 40px;
+}
+
+.playerButtons{
+    display: flex;
+    gap:250px;
+}
+
+.playerSelect{
+    background-color:#626161;
+}
+.sprite{
+    position: absolute;
+    width: 98%;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 5px;
+    top: 25%;
+    left:1%;
+    background-color: #626161;
+    box-shadow: 10px 10px 10px rgba(255,255,255,0.3),  10px -10px 10px rgba(102, 104, 142, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ex{
+    height: 300px;  
+    width: 300px;
+}
+.XorO{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 300px;
+
+}
+.XorO button{
+    background-color: #626161;
+    border: none;
+    box-shadow: 10px 10px 10px rgb(55, 54, 54);
+}
+button:hover {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.3),
+    0 8px 28px rgba(0,0,0,0.6);
+}

@@ -4,63 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link rel="icon" href="./tic-tac-toe.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1 style="text-align: center;">TIC TAC TOE</h1>
-    <div class="board">
-        <div class="class lucorner">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
+    <h1 style="text-align: center; color: #494949; font-size: 50px;">TIC TAC TOE</h1>
+    <div class="hugeContainer hidden">
+        <div class="board">
+            <div class="class lucorner">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class ucenter">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class rucorner">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class lmiddle">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class mmiddle">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class rmiddle">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class lbcorner">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class bcenter">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+            <div class="class rbcorner">
+                <img src="./O_Mark.svg" alt = "O" class = "O">
+                <img src="./X_Mark.svg" alt = "X" class = "X">
+            </div>
+        </div>    
+        <div class = "hlinediv">
+            <img src ="./Horizontal_line.svg" alt = "hline" class="hline">
+            <img src ="./Horizontal_line.svg" alt = "hline" class="hline">
+            <img src ="./Horizontal_line.svg" alt = "hline" class="hline">
         </div>
-        <div class="class ucenter">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
+        <div class = "vlinediv">
+            <img src = "./Vertical_line.svg" alt = "vline" class="vline">
+            <img src = "./Vertical_line.svg" alt = "vline" class="vline">
+            <img src = "./Vertical_line.svg" alt = "vline" class="vline">
         </div>
-        <div class="class rucorner">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-        <div class="class lmiddle">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-        <div class="class mmiddle">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-        <div class="class rmiddle">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-        <div class="class lbcorner">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-        <div class="class bcenter">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-        <div class="class rbcorner">
-            <img src="./O_Mark.svg" alt = "O" class = "O">
-            <img src="./X_Mark.svg" alt = "X" class = "X">
-        </div>
-    </div> 
+        <img src = "./left-diagonal.svg" alt = "ldiagonal" class="ldiagonal">
+        <img src = "./right-diagonal.svg" alt = "rdiagonal" class="rdiagonal">
+    </div>
 
+    <!--Next Move and Reset button-->
     <div class="buttons">
-        <button class = "moves"><img src = "./X_Mark.svg" alt = "move" class="nextTurn"></button>
-        <button class = "moves">Reset</button>
-    </div>   
-    <div class = "hline">
-        <img src ="./Horizontal_line.svg" alt = "hline">
-        <img src ="./Horizontal_line.svg" alt = "hline">
-        <img src ="./Horizontal_line.svg" alt = "hline">
+        <button class = "moves"><img src = "#" alt = "move" class="nextTurn"></button>
+        <button class = "moves" onclick="reset();">Reset</button>
     </div>
-    <div class = "vline">
-        <img src = "./Vertical_line.svg" alt = "vline">
-        <img src = "./Vertical_line.svg" alt = "vline">
-        <img src = "./Vertical_line.svg" alt = "vline">
+
+    <!--X Winning div-->
+    <div class="Xwin hidden">
+        <h1> X wins!!</h1>
+        <div class="buttons">
+        <button class = "moves replay" onclick="reset();">Replay</button>
     </div>
+
+    </div>
+
+    <!--O Winning div-->
+    <div class="Owin hidden">
+        <h1> O Wins!!</h1>
+        <button class = "moves replay" onclick="reset();">Replay</button>
+    </div>
+
+
+    <!--1) Start Game-->
+    <div class="start">
+        <button  class = "init" onclick='document.querySelector(".start").style.opacity=0
+            document.querySelector(".players").classList.remove("hidden")'>
+            Start
+        </button>
+    </div>
+
+
+    <!--2) Player Selection Card-->
+    <div class="players hidden">
+        <h1 style="color: #929191;font-size: 50px;">Select number of players</h1>
+        <div class="playerButtons">
+            <button class="playerSelect one"><img src="./BlackPerson2.svg" class="black"></button>
+            <button class="playerSelect two" onclick="document.querySelector('.players').classList.add('hidden');
+            document.querySelector('.sprite').classList.remove('hidden')"><img src="./BlackPerson2.svg" class="black"><img src="./WhitePerson.svg" class="white"></button>
+        </div>
+    </div>
+
+    <!--3) X/O Selection Div-->
+    <div class="sprite hidden">
+        <h1 style="color: #929191;font-size: 50px;">What would you like to play</h1>
+        <div class="XorO">
+            <button onclick="document.querySelector('.sprite').classList.add('hidden'); turn=0;container.classList.remove('hidden');updateNextTurn();"><img src="./X_Mark.svg" class="XSprite ex"></button> 
+
+            <button onclick="document.querySelector('.sprite').classList.add('hidden'); turn=1;container.classList.remove('hidden');updateNextTurn();"><img src="./O_Mark.svg" class="OSprite ex"></button> 
+        </div>
+    </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
